@@ -1,233 +1,52 @@
-
-<!DOCTYPE html>
+<!doctype html>
 <html lang="pt-PT">
 <head>
-  <meta charset="UTF-8">
+  <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="VOA & POUPA — Descobre destinos, compara opções e prepara a tua próxima viagem.">
-  <title>VOA & POUPA | Viaja mais. Gasta menos.</title>
-  <style>
-    :root {
-      --navy: #003366;
-      --blue: #007bff;
-      --orange: #ffa500;
-      --light: #e6f2ff;
-      --white: #fff;
-      --ink: #18324a;
-    }
-    * { box-sizing: border-box; }
-    body {
-      margin: 0;
-      font-family: Arial, sans-serif;
-      color: var(--ink);
-      background: #f7fbff;
-      line-height: 1.6;
-    }
-    header {
-      background: var(--navy);
-      color: white;
-      padding: 18px 6%;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      flex-wrap: wrap;
-      gap: 12px;
-    }
-    .logo { font-size: 25px; font-weight: 800; }
-    .logo span { color: var(--orange); }
-    nav a {
-      color: white;
-      text-decoration: none;
-      margin-left: 18px;
-      font-weight: bold;
-    }
-    nav a:hover { color: var(--orange); }
-    .hero {
-      padding: 90px 6%;
-      text-align: center;
-      color: white;
-      background: linear-gradient(135deg, #003366, #007bff);
-    }
-    .hero h1 {
-      font-size: clamp(34px, 6vw, 60px);
-      margin: 0 0 12px;
-    }
-    .hero p { font-size: 20px; }
-    .button {
-      display: inline-block;
-      background: var(--orange);
-      color: #172a40;
-      padding: 13px 25px;
-      border-radius: 9px;
-      text-decoration: none;
-      font-weight: bold;
-      margin-top: 15px;
-    }
-    .button:hover { background: #ffc04d; }
-    section { padding: 65px 6%; }
-    h2 { text-align: center; color: var(--navy); }
-    .intro {
-      max-width: 760px;
-      margin: 0 auto;
-      text-align: center;
-    }
-    .grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
-      gap: 22px;
-      max-width: 1100px;
-      margin: 35px auto 0;
-    }
-    .card {
-      background: white;
-      border-radius: 16px;
-      padding: 26px;
-      box-shadow: 0 5px 20px #00336612;
-      border: 1px solid #dceaf8;
-    }
-    .card .emoji { font-size: 42px; }
-    .card h3 { color: var(--navy); }
-    .card p { color: #52677b; }
-    .search {
-      background: var(--light);
-      text-align: center;
-    }
-    .search-box {
-      max-width: 700px;
-      margin: 25px auto 0;
-      background: white;
-      padding: 25px;
-      border-radius: 16px;
-    }
-    .search-box a { margin: 7px; }
-    .notice {
-      max-width: 800px;
-      margin: 20px auto 0;
-      font-size: 14px;
-      color: #536679;
-    }
-    .contact { text-align: center; }
-    .contact a { color: var(--blue); }
-    footer {
-      background: var(--navy);
-      color: white;
-      padding: 30px 6%;
-      text-align: center;
-    }
-    footer p { margin: 7px 0; }
-    @media (max-width: 600px) {
-      header { justify-content: center; text-align: center; }
-      nav a { margin: 0 7px; font-size: 14px; }
-      .hero { padding: 65px 6%; }
-    }
-  </style>
+  <meta name="description" content="VOA & POUPA — inspiração para a próxima viagem, dicas para poupar e pesquisa de voos em serviços externos.">
+  <meta name="theme-color" content="#102d4d">
+  <title>VOA & POUPA · Viaja mais. Gasta menos.</title>
+  <link rel="icon" href="assets/logo.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="styles.css">
+  <script src="app.js" defer></script>
 </head>
 <body>
-
-  <header>
-    <div class="logo">✈ VOA <span>& POUPA</span></div>
-    <nav>
-      <a href="#inicio">Início</a>
-      <a href="#destinos">Destinos</a>
-      <a href="#pesquisar">Pesquisar</a>
-      <a href="#contacto">Contacto</a>
-    </nav>
-  </header>
-
-  <main>
-    <div class="hero" id="inicio">
-      <h1>Viaja mais.<br>Gasta menos.</h1>
-      <p>Descobre destinos e encontra ferramentas para comparar voos.</p>
-      <a class="button" href="#pesquisar">Explorar voos</a>
-    </div>
-
-    <section>
-      <h2>Bem-vindo à VOA & POUPA</h2>
-      <p class="intro">
-        Queremos ajudar-te a planear viagens de forma simples,
-        prática e económica. Explora destinos, compara alternativas
-        e prepara a tua próxima aventura.
-      </p>
-    </section>
-
-    <section id="destinos">
-      <h2>Destinos em destaque</h2>
-      <div class="grid">
-        <article class="card">
-          <div class="emoji">🌍</div>
-          <h3>Lisboa → Luanda</h3>
-          <p>Explora opções de viagem entre Portugal e Angola.</p>
-        </article>
-        <article class="card">
-          <div class="emoji">🗼</div>
-          <h3>Lisboa → Paris</h3>
-          <p>Descobre possibilidades para uma escapadinha à capital francesa.</p>
-        </article>
-        <article class="card">
-          <div class="emoji">🏖️</div>
-          <h3>Lisboa → Rio de Janeiro</h3>
-          <p>Começa a planear a tua próxima viagem ao Brasil.</p>
-        </article>
-      </div>
-    </section>
-
-    <section class="search" id="pesquisar">
-      <h2>Pesquisar e comparar voos</h2>
-      <p>Consulta plataformas externas para pesquisar preços e horários.</p>
-      <div class="search-box">
-        <a class="button"
-           href="https://www.google.com/travel/flights"
-           target="_blank" rel="noopener noreferrer">
-          Google Flights
-        </a>
-        <a class="button"
-           href="https://www.skyscanner.pt/"
-           target="_blank" rel="noopener noreferrer">
-          Skyscanner
-        </a>
-      </div>
-      <p class="notice">
-        A VOA & POUPA não apresenta preços em tempo real nesta versão.
-        As pesquisas, reservas e pagamentos são realizados nos
-        websites externos. Os preços e a disponibilidade podem variar.
-      </p>
-    </section>
-
-    <section>
-      <h2>Porque escolher a VOA & POUPA?</h2>
-      <div class="grid">
-        <div class="card">
-          <h3>🔎 Comparação</h3>
-          <p>Encontra ferramentas para explorar diferentes opções de viagem.</p>
-        </div>
-        <div class="card">
-          <h3>💡 Dicas úteis</h3>
-          <p>Aprende a planear viagens e a controlar o orçamento.</p>
-        </div>
-        <div class="card">
-          <h3>🌐 Destinos</h3>
-          <p>Inspira-te para descobrir novos lugares.</p>
-        </div>
-      </div>
-    </section>
-
-    <section class="contact" id="contacto">
-      <h2>Fala connosco</h2>
-      <p>Tens alguma questão ou sugestão?</p>
-      <p>
-        <a href="mailto:voaepoupa@gmail.com">
-          voaepoupa@gmail.com
-        </a>
-      </p>
-    </section>
-  </main>
-
-  <footer>
-    <p><strong>✈ VOA & POUPA</strong></p>
-    <p>Viaja mais. Gasta menos.</p>
-    <p>© 2026 VOA & POUPA</p>
-    <p>Projeto informativo em desenvolvimento.</p>
-  </footer>
-
-</body>
-</html>
+<a class="skip" href="#conteudo">Saltar para o conteúdo</a>
+<header class="header wrap">
+  <a class="brand" href="#" aria-label="VOA & POUPA — início"><img src="assets/logo.svg" alt="" width="52" height="52"><span>VOA <b>&</b> POUPA<small>O MUNDO ESTÁ À TUA ESPERA</small></span></a>
+  <nav aria-label="Navegação principal"><a href="#destinos">Destinos</a><a href="#dicas">Dicas de viagem</a><a href="#sobre">Sobre nós</a></nav>
+  <a class="button small" href="#pesquisa">Encontrar voos <span aria-hidden="true">↗</span></a>
+</header>
+<main id="conteudo">
+<section class="hero">
+  <div class="wrap hero-grid">
+    <div class="hero-copy"><p class="eyebrow"><span></span> MENOS LIMITES. MAIS MUNDO.</p><h1>Viaja mais.<br><em>Gasta menos.</em></h1><p class="intro">A próxima aventura começa com uma boa escolha.<br class="desktop"> Descobre destinos, compara voos e faz as malas.</p><a class="button orange" href="#pesquisa">Vamos encontrar a tua viagem <span aria-hidden="true">↗</span></a><p class="hero-note">Inspiração para partir. Liberdade para escolher.</p></div>
+    <div class="hero-art hero-photo"><img src="assets/aviao-lisboa.png" alt="Imagem de aspeto fotográfico, gerada por IA, de um avião a sobrevoar Lisboa e o Tejo" width="1536" height="1024"><div class="travel-tag"><span aria-hidden="true">✦</span><div>O teu próximo destino?<strong>Pode começar aqui.</strong></div></div></div>
+  </div>
+</section>
+<section class="wrap search-section" id="pesquisa" aria-labelledby="search-title">
+ <div class="search-card"><div class="search-heading"><h2 id="search-title"><span aria-hidden="true">↗</span> Para onde vamos?</h2><span>Pesquisa no Google Flights ↗</span></div>
+ <form id="flight-form" action="https://www.google.com/travel/flights" method="get" target="_blank" rel="noopener noreferrer">
+ <input type="hidden" name="hl" value="pt-PT">
+ <div class="fields"><label>De<select id="origin" required><option value="LIS">Lisboa · LIS</option><option value="OPO">Porto · OPO</option><option value="FAO">Faro · FAO</option><option value="LAD">Luanda · LAD</option></select></label>
+ <label>Para<select id="destination" required><option value="LAD">Luanda · LAD</option><option value="PAR">Paris · PAR</option><option value="RIO">Rio de Janeiro · RIO</option><option value="SID">Ilha do Sal · SID</option><option value="LIS">Lisboa · LIS</option></select></label>
+ <label>Ida<input id="departure" type="date" required></label><label id="return-field">Volta<input id="return" type="date" required></label>
+ <label>Passageiros<select id="passengers"><option value="1">1 adulto</option><option value="2">2 adultos</option><option value="3">3 adultos</option><option value="4">4 adultos</option><option value="5">5 adultos</option><option value="6">6 adultos</option></select></label>
+ <button class="button" type="submit">Pesquisar <span aria-hidden="true">↗</span></button></div>
+ <div class="form-bottom"><label class="check"><input type="checkbox" id="one-way"> Só ida</label><p>Abre um serviço externo num novo separador. Confirma lá os dados e os preços.</p></div><p id="form-error" role="alert" hidden></p>
+ </form><noscript><p>A pesquisa personalizada precisa de JavaScript. <a href="https://www.google.com/travel/flights?hl=pt-PT" target="_blank" rel="noopener noreferrer">Abrir o Google Flights ↗</a></p></noscript></div>
+</section>
+<section class="wrap destinations section" id="destinos" aria-labelledby="destinations-title">
+ <div class="section-heading"><div><p class="eyebrow">UM BILHETE. TANTAS POSSIBILIDADES.</p><h2 id="destinations-title">Qual é a tua próxima paragem?</h2></div><p>Quatro ideias para sair da rotina.<br>O destino é teu. A inspiração é nossa.</p></div>
+ <div class="destination-grid">
+ <article class="destination luanda"><div class="city-art" aria-hidden="true"><span class="sun"></span><div class="skyline"><i></i><i></i><i></i><i></i><i></i></div><span class="place">ANGOLA</span></div><div class="destination-body"><span class="route">LIS <span>⟶</span> LAD</span><h3>Luanda</h3><p>Entre o Atlântico e a energia da cidade.</p><button class="route-button" data-destination="LAD">Explorar Lisboa–Luanda <span aria-hidden="true">↗</span></button></div></article>
+ <article class="destination paris"><div class="city-art" aria-hidden="true"><span class="sun"></span><svg viewBox="0 0 300 160"><path d="M150 16 121 147M150 16l29 131M136 83h28M128 112h44M118 148h64M150 5v19M136 147q14-40 28 0" fill="none" stroke="currentColor" stroke-width="5"/></svg><span class="place">FRANÇA</span></div><div class="destination-body"><span class="route">LIS <span>⟶</span> PAR</span><h3>Paris</h3><p>Um café, uma caminhada, outra perspetiva.</p><button class="route-button" data-destination="PAR">Explorar Lisboa–Paris <span aria-hidden="true">↗</span></button></div></article>
+ <article class="destination rio"><div class="city-art" aria-hidden="true"><span class="sun"></span><svg viewBox="0 0 300 160"><path d="M0 160Q25 150 65 85Q85 58 110 108Q135 160 150 100Q165 25 187 90Q220 135 300 150V160" fill="currentColor"/><path d="M177 47v27m-13-22h26" stroke="#fff3d9" stroke-width="5"/></svg><span class="place">BRASIL</span></div><div class="destination-body"><span class="route">LIS <span>⟶</span> RIO</span><h3>Rio de Janeiro</h3><p>Mar, montanha e dias com outro ritmo.</p><button class="route-button" data-destination="RIO">Explorar Lisboa–Rio <span aria-hidden="true">↗</span></button></div></article>
+ <article class="destination sal"><div class="city-art" aria-hidden="true"><span class="sun"></span><svg viewBox="0 0 300 160"><path d="M0 140q85-30 170 0t130 0v20H0" fill="#f4dbac"/><path d="M193 143q-16-47-4-93m0 0q-25-20-42-3m42 3q28-24 43-1m-43 1q-25 0-29 22m29-22q25 0 30 23" fill="none" stroke="currentColor" stroke-width="7"/></svg><span class="place">CABO VERDE</span></div><div class="destination-body"><span class="route">LIS <span>⟶</span> SID</span><h3>Ilha do Sal</h3><p>Areia nos pés. O Atlântico à tua frente.</p><button class="route-button" data-destination="SID">Explorar Lisboa–Sal <span aria-hidden="true">↗</span></button></div></article>
+ </div><p class="caption">Ilustrações dos destinos. Consulta disponibilidade, escalas e tarifas no serviço de pesquisa.</p>
+</section>
+<section class="tips-section" id="dicas"><div class="wrap section"><div class="section-heading"><div><p class="eyebrow">PEQUENAS ESCOLHAS, MELHORES VIAGENS</p><h2>O teu dinheiro também merece férias.</h2></div><a class="text-link" href="#pesquisa">Começar a planear ↗</a></div><div class="tips-grid"><article><span class="tip-number">01 / DATAS</span><h3>Dá espaço ao calendário.</h3><p>Compara dias próximos da partida e do regresso. Experimenta outras datas e vê o que funciona para ti.</p></article><article><span class="tip-number">02 / BAGAGEM</span><h3>Olha para o valor final.</h3><p>Antes de decidir, verifica bagagem, escolha de lugar e outros extras. Compara o custo total da viagem.</p></article><article><span class="tip-number">03 / ESCOLHA</span><h3>Compara com calma.</h3><p>Confirma escalas, aeroportos e condições de alteração. Consulta também o site da companhia antes de reservar.</p></article></div></div></section>
+<section class="wrap section about" id="sobre"><div><p class="eyebrow">VOA & POUPA</p><h2>Mais mundo.<br>Mais à tua medida.</h2></div><div><p>Um ponto de partida para quem quer descobrir novos lugares e fazer escolhas conscientes. Juntamos inspiração, dicas simples e acesso à pesquisa de voos.</p><p class="muted">Não vendemos bilhetes nem fazemos reservas. Os preços e a disponibilidade são apresentados pelos serviços externos e podem mudar. Confirma sempre os detalhes antes de comprar.</p><a class="text-link" href="https://www.flytap.com/" target="_blank" rel="noopener noreferrer">Consultar o site oficial da TAP ↗</a></div></section>
+</main>
+<footer><div class="wrap footer-row"><a class="brand footer-brand" href="#"><img src="assets/logo.svg" alt="" width="42" height="42"><span>VOA <b>&</b> POUPA</span></a><p>Viaja mais. Gasta menos.</p><a href="#pesquisa">A próxima viagem começa aqui ↑</a></div><div class="wrap footer-note"><span>© <span id="year">2026</span> VOA & POUPA</span><span>Sem registo, sem pagamentos e sem cookies próprios. As ligações externas têm políticas próprias.</span></div></footer>
+</body></html>
