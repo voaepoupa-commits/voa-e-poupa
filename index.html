@@ -1,14 +1,233 @@
 
 <!DOCTYPE html>
-<html lang="pt">
+<html lang="pt-PT">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>VOA &amp; POUPA</title>
+  <meta name="description" content="VOA & POUPA — Descobre destinos, compara opções e prepara a tua próxima viagem.">
+  <title>VOA & POUPA | Viaja mais. Gasta menos.</title>
+  <style>
+    :root {
+      --navy: #003366;
+      --blue: #007bff;
+      --orange: #ffa500;
+      --light: #e6f2ff;
+      --white: #fff;
+      --ink: #18324a;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      color: var(--ink);
+      background: #f7fbff;
+      line-height: 1.6;
+    }
+    header {
+      background: var(--navy);
+      color: white;
+      padding: 18px 6%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+    .logo { font-size: 25px; font-weight: 800; }
+    .logo span { color: var(--orange); }
+    nav a {
+      color: white;
+      text-decoration: none;
+      margin-left: 18px;
+      font-weight: bold;
+    }
+    nav a:hover { color: var(--orange); }
+    .hero {
+      padding: 90px 6%;
+      text-align: center;
+      color: white;
+      background: linear-gradient(135deg, #003366, #007bff);
+    }
+    .hero h1 {
+      font-size: clamp(34px, 6vw, 60px);
+      margin: 0 0 12px;
+    }
+    .hero p { font-size: 20px; }
+    .button {
+      display: inline-block;
+      background: var(--orange);
+      color: #172a40;
+      padding: 13px 25px;
+      border-radius: 9px;
+      text-decoration: none;
+      font-weight: bold;
+      margin-top: 15px;
+    }
+    .button:hover { background: #ffc04d; }
+    section { padding: 65px 6%; }
+    h2 { text-align: center; color: var(--navy); }
+    .intro {
+      max-width: 760px;
+      margin: 0 auto;
+      text-align: center;
+    }
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+      gap: 22px;
+      max-width: 1100px;
+      margin: 35px auto 0;
+    }
+    .card {
+      background: white;
+      border-radius: 16px;
+      padding: 26px;
+      box-shadow: 0 5px 20px #00336612;
+      border: 1px solid #dceaf8;
+    }
+    .card .emoji { font-size: 42px; }
+    .card h3 { color: var(--navy); }
+    .card p { color: #52677b; }
+    .search {
+      background: var(--light);
+      text-align: center;
+    }
+    .search-box {
+      max-width: 700px;
+      margin: 25px auto 0;
+      background: white;
+      padding: 25px;
+      border-radius: 16px;
+    }
+    .search-box a { margin: 7px; }
+    .notice {
+      max-width: 800px;
+      margin: 20px auto 0;
+      font-size: 14px;
+      color: #536679;
+    }
+    .contact { text-align: center; }
+    .contact a { color: var(--blue); }
+    footer {
+      background: var(--navy);
+      color: white;
+      padding: 30px 6%;
+      text-align: center;
+    }
+    footer p { margin: 7px 0; }
+    @media (max-width: 600px) {
+      header { justify-content: center; text-align: center; }
+      nav a { margin: 0 7px; font-size: 14px; }
+      .hero { padding: 65px 6%; }
+    }
+  </style>
 </head>
 <body>
-  <h1>VOA &amp; POUPA</h1>
-  <h2>Viaja mais. Gasta menos.</h2>
-  <p>Estamos a preparar o nosso portal de viagens!</p>
+
+  <header>
+    <div class="logo">✈ VOA <span>& POUPA</span></div>
+    <nav>
+      <a href="#inicio">Início</a>
+      <a href="#destinos">Destinos</a>
+      <a href="#pesquisar">Pesquisar</a>
+      <a href="#contacto">Contacto</a>
+    </nav>
+  </header>
+
+  <main>
+    <div class="hero" id="inicio">
+      <h1>Viaja mais.<br>Gasta menos.</h1>
+      <p>Descobre destinos e encontra ferramentas para comparar voos.</p>
+      <a class="button" href="#pesquisar">Explorar voos</a>
+    </div>
+
+    <section>
+      <h2>Bem-vindo à VOA & POUPA</h2>
+      <p class="intro">
+        Queremos ajudar-te a planear viagens de forma simples,
+        prática e económica. Explora destinos, compara alternativas
+        e prepara a tua próxima aventura.
+      </p>
+    </section>
+
+    <section id="destinos">
+      <h2>Destinos em destaque</h2>
+      <div class="grid">
+        <article class="card">
+          <div class="emoji">🌍</div>
+          <h3>Lisboa → Luanda</h3>
+          <p>Explora opções de viagem entre Portugal e Angola.</p>
+        </article>
+        <article class="card">
+          <div class="emoji">🗼</div>
+          <h3>Lisboa → Paris</h3>
+          <p>Descobre possibilidades para uma escapadinha à capital francesa.</p>
+        </article>
+        <article class="card">
+          <div class="emoji">🏖️</div>
+          <h3>Lisboa → Rio de Janeiro</h3>
+          <p>Começa a planear a tua próxima viagem ao Brasil.</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="search" id="pesquisar">
+      <h2>Pesquisar e comparar voos</h2>
+      <p>Consulta plataformas externas para pesquisar preços e horários.</p>
+      <div class="search-box">
+        <a class="button"
+           href="https://www.google.com/travel/flights"
+           target="_blank" rel="noopener noreferrer">
+          Google Flights
+        </a>
+        <a class="button"
+           href="https://www.skyscanner.pt/"
+           target="_blank" rel="noopener noreferrer">
+          Skyscanner
+        </a>
+      </div>
+      <p class="notice">
+        A VOA & POUPA não apresenta preços em tempo real nesta versão.
+        As pesquisas, reservas e pagamentos são realizados nos
+        websites externos. Os preços e a disponibilidade podem variar.
+      </p>
+    </section>
+
+    <section>
+      <h2>Porque escolher a VOA & POUPA?</h2>
+      <div class="grid">
+        <div class="card">
+          <h3>🔎 Comparação</h3>
+          <p>Encontra ferramentas para explorar diferentes opções de viagem.</p>
+        </div>
+        <div class="card">
+          <h3>💡 Dicas úteis</h3>
+          <p>Aprende a planear viagens e a controlar o orçamento.</p>
+        </div>
+        <div class="card">
+          <h3>🌐 Destinos</h3>
+          <p>Inspira-te para descobrir novos lugares.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="contact" id="contacto">
+      <h2>Fala connosco</h2>
+      <p>Tens alguma questão ou sugestão?</p>
+      <p>
+        <a href="mailto:voaepoupa@gmail.com">
+          voaepoupa@gmail.com
+        </a>
+      </p>
+    </section>
+  </main>
+
+  <footer>
+    <p><strong>✈ VOA & POUPA</strong></p>
+    <p>Viaja mais. Gasta menos.</p>
+    <p>© 2026 VOA & POUPA</p>
+    <p>Projeto informativo em desenvolvimento.</p>
+  </footer>
+
 </body>
 </html>
