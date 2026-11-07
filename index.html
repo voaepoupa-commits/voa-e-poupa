@@ -1,233 +1,100 @@
-
 <!DOCTYPE html>
 <html lang="pt-PT">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="VOA & POUPA — Descobre destinos, compara opções e prepara a tua próxima viagem.">
-  <title>VOA & POUPA | Viaja mais. Gasta menos.</title>
-  <style>
-    :root {
-      --navy: #003366;
-      --blue: #007bff;
-      --orange: #ffa500;
-      --light: #e6f2ff;
-      --white: #fff;
-      --ink: #18324a;
-    }
-    * { box-sizing: border-box; }
-    body {
-      margin: 0;
-      font-family: Arial, sans-serif;
-      color: var(--ink);
-      background: #f7fbff;
-      line-height: 1.6;
-    }
-    header {
-      background: var(--navy);
-      color: white;
-      padding: 18px 6%;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      flex-wrap: wrap;
-      gap: 12px;
-    }
-    .logo { font-size: 25px; font-weight: 800; }
-    .logo span { color: var(--orange); }
-    nav a {
-      color: white;
-      text-decoration: none;
-      margin-left: 18px;
-      font-weight: bold;
-    }
-    nav a:hover { color: var(--orange); }
-    .hero {
-      padding: 90px 6%;
-      text-align: center;
-      color: white;
-      background: linear-gradient(135deg, #003366, #007bff);
-    }
-    .hero h1 {
-      font-size: clamp(34px, 6vw, 60px);
-      margin: 0 0 12px;
-    }
-    .hero p { font-size: 20px; }
-    .button {
-      display: inline-block;
-      background: var(--orange);
-      color: #172a40;
-      padding: 13px 25px;
-      border-radius: 9px;
-      text-decoration: none;
-      font-weight: bold;
-      margin-top: 15px;
-    }
-    .button:hover { background: #ffc04d; }
-    section { padding: 65px 6%; }
-    h2 { text-align: center; color: var(--navy); }
-    .intro {
-      max-width: 760px;
-      margin: 0 auto;
-      text-align: center;
-    }
-    .grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
-      gap: 22px;
-      max-width: 1100px;
-      margin: 35px auto 0;
-    }
-    .card {
-      background: white;
-      border-radius: 16px;
-      padding: 26px;
-      box-shadow: 0 5px 20px #00336612;
-      border: 1px solid #dceaf8;
-    }
-    .card .emoji { font-size: 42px; }
-    .card h3 { color: var(--navy); }
-    .card p { color: #52677b; }
-    .search {
-      background: var(--light);
-      text-align: center;
-    }
-    .search-box {
-      max-width: 700px;
-      margin: 25px auto 0;
-      background: white;
-      padding: 25px;
-      border-radius: 16px;
-    }
-    .search-box a { margin: 7px; }
-    .notice {
-      max-width: 800px;
-      margin: 20px auto 0;
-      font-size: 14px;
-      color: #536679;
-    }
-    .contact { text-align: center; }
-    .contact a { color: var(--blue); }
-    footer {
-      background: var(--navy);
-      color: white;
-      padding: 30px 6%;
-      text-align: center;
-    }
-    footer p { margin: 7px 0; }
-    @media (max-width: 600px) {
-      header { justify-content: center; text-align: center; }
-      nav a { margin: 0 7px; font-size: 14px; }
-      .hero { padding: 65px 6%; }
-    }
-  </style>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="VOA & POUPA — Pesquisa voos, explora destinos e compara opções em plataformas externas. Transparência em cada viagem.">
+<meta name="theme-color" content="#003366"><title>VOA & POUPA | Viaja mais. Gasta menos.</title>
+<style>
+:root{--navy:#003366;--blue:#007bff;--orange:#ffa500;--ink:#18324a;--muted:#52677b;--line:#dbe6ef;--light:#edf5fc}*{box-sizing:border-box}html{scroll-behavior:smooth;scroll-padding-top:24px}body{margin:0;background:#f8fbfe;color:var(--ink);font:16px/1.6 system-ui,-apple-system,"Segoe UI",sans-serif}a{color:#005bbd;text-underline-offset:4px}button,input,select{font:inherit}button,a,input,select{-webkit-tap-highlight-color:transparent}:focus-visible{outline:3px solid #cc6400;outline-offset:4px}.wrap{width:min(1120px,90%);margin:auto}.skip{position:absolute;top:-100px;background:white;padding:12px;z-index:5}.skip:focus{top:10px}header{background:var(--navy);color:white}.bar{display:flex;align-items:center;justify-content:space-between;gap:20px;padding:22px 0}.logo{font-size:23px;font-weight:850;letter-spacing:-1px;text-decoration:none;color:white;white-space:nowrap}.logo span{color:var(--orange)}nav{display:flex;gap:24px;flex-wrap:wrap}nav a{color:white;text-decoration:none;font-size:14px;font-weight:650}nav a:hover{text-decoration:underline;color:#ffbd47}.hero{background:linear-gradient(120deg,#003366 35%,#075fbd);color:white;overflow:hidden}.hero-layout{display:grid;grid-template-columns:1.3fr 1fr;gap:50px;align-items:center;padding:65px 0 100px}.eyebrow{text-transform:uppercase;letter-spacing:2px;font-size:12px;font-weight:750;color:#a9d8ff}.hero h1{font-size:clamp(42px,6vw,72px);line-height:1.06;letter-spacing:-3px;margin:18px 0 24px}.hero h1 span{color:#ffb62e}.hero p{max-width:480px;color:#d9ecff;font-size:18px}.route-art{border:1px solid #ffffff40;border-radius:24px;padding:32px;background:#ffffff0a;transform:rotate(-3deg)}.route-art .route{display:flex;align-items:center;justify-content:space-between;gap:15px}.airport{font-size:40px;font-weight:750;line-height:1.2}.airport small{display:block;font-size:13px;font-weight:400;color:#cce5ff;letter-spacing:0}.flight-line{flex:1;text-align:center;color:#ffb62e;border-bottom:2px dashed #ffffff60;font-size:28px}.route-art p{font-size:13px;margin:28px 0 0;border-top:1px solid #ffffff30;padding-top:16px}.search-panel{position:relative;margin-top:-48px;background:white;border:1px solid var(--line);border-radius:20px;box-shadow:0 16px 48px #00336612;padding:28px;scroll-margin-top:25px}h2{font-size:clamp(25px,3vw,34px);color:var(--navy);line-height:1.2;letter-spacing:-.7px;margin:0 0 15px}h3{color:var(--navy);font-size:22px;line-height:1.3}.panel-head{display:flex;justify-content:space-between;gap:16px;align-items:center;margin-bottom:20px}.panel-head h2{font-size:23px;margin:0}.pill{font-size:12px;padding:5px 11px;border-radius:99px;background:var(--light);color:var(--navy);font-weight:700}.fields{display:grid;grid-template-columns:repeat(2,1.3fr) repeat(2,1fr);gap:14px}label{display:block;font-size:13px;font-weight:700}input,select{width:100%;min-width:0;border:1px solid #acbfd0;border-radius:8px;padding:11px 10px;background:white;color:var(--ink);margin-top:6px;min-height:48px}input:disabled{background:#eef2f6;color:#647281}.search-bottom{display:grid;grid-template-columns:1fr 1fr 1.4fr;gap:14px;align-items:end;margin-top:16px}.button{display:inline-block;border:0;border-radius:9px;background:var(--orange);color:#172a40;font-weight:750;padding:14px 22px;text-decoration:none;cursor:pointer;text-align:center}.button:hover{background:#ffbd47}.secondary{background:var(--light);color:var(--navy)}.small{font-size:13px;color:var(--muted)}.error{color:#a51b1b;font-weight:650;margin-bottom:0}.section{padding:76px 0}.section-intro{max-width:650px;color:var(--muted);margin-bottom:28px}.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}.card{background:white;border:1px solid var(--line);border-radius:16px;overflow:hidden}.card-body{padding:24px}.card h3{margin:9px 0 12px}.card p{color:var(--muted)}.destination-art{height:120px;display:flex;justify-content:space-between;align-items:end;padding:20px 24px;color:white;background:linear-gradient(135deg,#003366,#187eb8);font-size:30px;font-weight:800;letter-spacing:-1px}.paris{background:linear-gradient(135deg,#144573,#729fc0)}.rio{background:linear-gradient(135deg,#006c77,#21a29d)}.destination-art small{font-size:12px;font-weight:600;letter-spacing:1px}.card button{width:100%}.offer-note{margin-top:24px;border-left:3px solid var(--orange);padding-left:18px;color:var(--muted)}.band{background:#eaf3fb}.split{display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:start}.steps{list-style:none;padding:0;margin:0;counter-reset:steps}.steps li{counter-increment:steps;position:relative;padding:0 0 24px 48px}.steps li:before{content:"0" counter(steps);position:absolute;left:0;color:#0064c7;font-weight:800}.steps strong{display:block;color:var(--navy)}.steps p{margin:4px 0;color:var(--muted)}.future{border:1px solid #d6e4ef;border-radius:16px;background:white;padding:28px}.future h3{margin:16px 0}.future p{color:var(--muted)}details{border-bottom:1px solid var(--line);padding:18px 0}summary{font-weight:700;cursor:pointer;color:var(--navy)}details p{max-width:800px;color:var(--muted)}.contact{display:flex;align-items:center;justify-content:space-between;gap:24px;border-top:1px solid var(--line);padding:35px 0 55px}.contact h2{font-size:26px}.contact p{margin:0;color:var(--muted)}footer{background:var(--navy);color:#d5e7f9;padding:30px 0}footer .wrap{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap}footer p{margin:0;font-size:13px}footer a{color:white}
+@media(max-width:850px){.hero-layout{gap:25px}.route-art{padding:22px}.airport{font-size:30px}.fields{grid-template-columns:1fr 1fr}.grid{gap:14px}.card-body{padding:18px}.split{gap:30px}.search-bottom{grid-template-columns:1fr 1fr}.search-bottom button{grid-column:1/-1}.bar{flex-wrap:wrap}}
+@media(max-width:600px){.bar{gap:14px;padding:18px 0}nav{gap:18px}.hero-layout{grid-template-columns:1fr;padding:38px 0 85px}.hero h1{letter-spacing:-2px}.route-art{display:none}.search-panel{padding:22px 18px}.panel-head{align-items:start;flex-direction:column;gap:8px}.fields,.search-bottom,.grid,.split{grid-template-columns:1fr}.search-bottom button{grid-column:auto}.section{padding:48px 0}.contact{align-items:start;flex-direction:column}.button{width:100%}.destination-art{height:100px}nav a{font-size:13px}}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+.search-tools{display:flex;gap:12px;align-items:center;flex-wrap:wrap;margin-bottom:18px}.search-tools button{font-size:13px;padding:8px 14px;border:1px solid var(--line)}.search-summary{padding:12px 16px;background:var(--light);border-radius:8px;color:var(--navy);font-size:14px}.search-panel input:invalid:not(:placeholder-shown){box-shadow:none}@media print{nav,.search-tools,.search-bottom button{display:none}.hero-layout{padding:20px 0 60px}.section{padding:24px 0}.grid{break-inside:avoid}}
+</style>
 </head>
 <body>
-
-  <header>
-    <div class="logo">✈ VOA <span>& POUPA</span></div>
-    <nav>
-      <a href="#inicio">Início</a>
-      <a href="#destinos">Destinos</a>
-      <a href="#pesquisar">Pesquisar</a>
-      <a href="#contacto">Contacto</a>
-    </nav>
-  </header>
-
-  <main>
-    <div class="hero" id="inicio">
-      <h1>Viaja mais.<br>Gasta menos.</h1>
-      <p>Descobre destinos e encontra ferramentas para comparar voos.</p>
-      <a class="button" href="#pesquisar">Explorar voos</a>
-    </div>
-
-    <section>
-      <h2>Bem-vindo à VOA & POUPA</h2>
-      <p class="intro">
-        Queremos ajudar-te a planear viagens de forma simples,
-        prática e económica. Explora destinos, compara alternativas
-        e prepara a tua próxima aventura.
-      </p>
-    </section>
-
-    <section id="destinos">
-      <h2>Destinos em destaque</h2>
-      <div class="grid">
-        <article class="card">
-          <div class="emoji">🌍</div>
-          <h3>Lisboa → Luanda</h3>
-          <p>Explora opções de viagem entre Portugal e Angola.</p>
-        </article>
-        <article class="card">
-          <div class="emoji">🗼</div>
-          <h3>Lisboa → Paris</h3>
-          <p>Descobre possibilidades para uma escapadinha à capital francesa.</p>
-        </article>
-        <article class="card">
-          <div class="emoji">🏖️</div>
-          <h3>Lisboa → Rio de Janeiro</h3>
-          <p>Começa a planear a tua próxima viagem ao Brasil.</p>
-        </article>
-      </div>
-    </section>
-
-    <section class="search" id="pesquisar">
-      <h2>Pesquisar e comparar voos</h2>
-      <p>Consulta plataformas externas para pesquisar preços e horários.</p>
-      <div class="search-box">
-        <a class="button"
-           href="https://www.google.com/travel/flights"
-           target="_blank" rel="noopener noreferrer">
-          Google Flights
-        </a>
-        <a class="button"
-           href="https://www.skyscanner.pt/"
-           target="_blank" rel="noopener noreferrer">
-          Skyscanner
-        </a>
-      </div>
-      <p class="notice">
-        A VOA & POUPA não apresenta preços em tempo real nesta versão.
-        As pesquisas, reservas e pagamentos são realizados nos
-        websites externos. Os preços e a disponibilidade podem variar.
-      </p>
-    </section>
-
-    <section>
-      <h2>Porque escolher a VOA & POUPA?</h2>
-      <div class="grid">
-        <div class="card">
-          <h3>🔎 Comparação</h3>
-          <p>Encontra ferramentas para explorar diferentes opções de viagem.</p>
-        </div>
-        <div class="card">
-          <h3>💡 Dicas úteis</h3>
-          <p>Aprende a planear viagens e a controlar o orçamento.</p>
-        </div>
-        <div class="card">
-          <h3>🌐 Destinos</h3>
-          <p>Inspira-te para descobrir novos lugares.</p>
-        </div>
-      </div>
-    </section>
-
-    <section class="contact" id="contacto">
-      <h2>Fala connosco</h2>
-      <p>Tens alguma questão ou sugestão?</p>
-      <p>
-        <a href="mailto:voaepoupa@gmail.com">
-          voaepoupa@gmail.com
-        </a>
-      </p>
-    </section>
-  </main>
-
-  <footer>
-    <p><strong>✈ VOA & POUPA</strong></p>
-    <p>Viaja mais. Gasta menos.</p>
-    <p>© 2026 VOA & POUPA</p>
-    <p>Projeto informativo em desenvolvimento.</p>
-  </footer>
-
-</body>
-</html>
+<a class="skip" href="#conteudo">Saltar para o conteúdo</a>
+<header><div class="wrap bar"><a class="logo" href="#inicio" aria-label="VOA e POUPA, início">✈ VOA <span>&amp; POUPA</span></a><nav aria-label="Navegação principal"><a href="#pesquisar">Pesquisar</a><a href="#destinos">Destinos</a><a href="#alertas">Alertas</a><a href="#contacto">Contacto</a></nav></div></header>
+<main id="conteudo">
+<div class="hero" id="inicio"><div class="wrap hero-layout"><div><div class="eyebrow">O próximo destino começa aqui</div><h1>Viaja mais.<br><span>Gasta menos.</span></h1><p>De Lisboa a Luanda, ou rumo a uma nova aventura. Escolhe a viagem e compara as opções lá fora.</p></div><div class="route-art" aria-hidden="true"><div class="route"><div class="airport">LIS<small>Lisboa</small></div><div class="flight-line">✈</div><div class="airport">NBJ<small>Luanda</small></div></div><p>Portugal ↔ Angola · Inspiração para a tua próxima viagem</p></div></div></div>
+<div class="wrap"><section class="search-panel" id="pesquisar" aria-labelledby="search-title"><div class="panel-head"><h2 id="search-title">Para onde vamos?</h2><span class="pill">Pesquisa externa · KAYAK</span></div>
+<div class="search-tools"><button class="button secondary" id="swap-airports" type="button" aria-label="Trocar aeroportos de origem e destino">⇄ Trocar aeroportos</button><span class="small">Planeia a tua viagem, sem preços inventados.</span></div>
+<form id="flight-form" action="https://www.kayak.pt/flights" method="get" aria-describedby="search-summary">
+<div class="fields"><label>Origem<select id="origin" required><option value="LIS">Lisboa (LIS)</option><option value="OPO">Porto (OPO)</option><option value="NBJ">Luanda — Dr. António Agostinho Neto (NBJ)</option><option value="CDG">Paris — Charles de Gaulle (CDG)</option><option value="GIG">Rio — Galeão (GIG)</option><option value="GRU">São Paulo — Guarulhos (GRU)</option><option value="MAD">Madrid (MAD)</option><option value="LHR">Londres — Heathrow (LHR)</option></select></label>
+<label>Destino<select id="destination" required><option value="NBJ">Luanda — Dr. António Agostinho Neto (NBJ)</option><option value="LIS">Lisboa (LIS)</option><option value="OPO">Porto (OPO)</option><option value="CDG">Paris — Charles de Gaulle (CDG)</option><option value="GIG">Rio — Galeão (GIG)</option><option value="GRU">São Paulo — Guarulhos (GRU)</option><option value="MAD">Madrid (MAD)</option><option value="LHR">Londres — Heathrow (LHR)</option></select></label>
+<label>Data de ida<input type="date" id="departure" required></label><label>Data de regresso<input type="date" id="return" required></label></div>
+<div class="search-bottom"><label>Tipo de viagem<select id="trip"><option value="return">Ida e volta</option><option value="oneway">Só ida</option></select></label><label>Passageiros (adultos)<select id="adults"><option value="1">1 adulto</option><option value="2">2 adultos</option><option value="3">3 adultos</option><option value="4">4 adultos</option><option value="5">5 adultos</option><option value="6">6 adultos</option><option value="7">7 adultos</option><option value="8">8 adultos</option><option value="9">9 adultos</option></select></label><button class="button" type="submit">Comparar no KAYAK ↗</button></div>
+<p id="search-summary" class="search-summary" role="status" aria-live="polite" aria-atomic="true"></p>
+<p id="form-error" class="error" role="alert" hidden></p>
+<p class="small">Vais sair deste site. Confirma os aeroportos, datas e passageiros no KAYAK. Adiciona crianças e bebés no comparador; este formulário envia apenas adultos. Para outros aeroportos, pesquisa diretamente no comparador.</p>
+</form><noscript><p>Ativa o JavaScript para enviar os critérios de pesquisa, ou abre um dos comparadores abaixo e preenche a viagem.</p></noscript>
+<p class="small">Também podes pesquisar diretamente: <a href="https://www.google.com/travel/flights" rel="noopener noreferrer" target="_blank">Google Flights ↗</a> · <a href="https://www.skyscanner.pt/" rel="noopener noreferrer" target="_blank">Skyscanner ↗</a></p></section></div>
+<section class="wrap section" id="destinos"><div class="eyebrow" style="color:#005bbd">Destinos em destaque</div><h2>Uma viagem para cada vontade.</h2><p class="section-intro">Inspiração para a próxima partida. Escolhe uma rota para preencher o formulário e indica as tuas datas.</p><div class="grid">
+<article class="card"><div class="destination-art"><span>Luanda</span><small>ANGOLA</small></div><div class="card-body"><span class="small">Lisboa → Luanda · LIS–NBJ</span><h3>Mais perto de quem importa.</h3><p>Começa a planear a tua ligação entre Portugal e Angola.</p><button class="button secondary" type="button" data-route="NBJ">Pesquisar esta rota →</button></div></article>
+<article class="card"><div class="destination-art paris"><span>Paris</span><small>FRANÇA</small></div><div class="card-body"><span class="small">Lisboa → Paris · LIS–CDG</span><h3>Uma pausa com outra vista.</h3><p>Prepara uma escapadinha entre passeios, arte e novos sabores.</p><button class="button secondary" type="button" data-route="CDG">Pesquisar esta rota →</button></div></article>
+<article class="card"><div class="destination-art rio"><span>Rio de Janeiro</span><small>BRASIL</small></div><div class="card-body"><span class="small">Lisboa → Rio · LIS–GIG</span><h3>Abre espaço para o sol.</h3><p>Explora opções para descobrir a cidade e a costa brasileira.</p><button class="button secondary" type="button" data-route="GIG">Pesquisar esta rota →</button></div></article></div>
+<div class="offer-note"><strong>Ofertas verificadas: em preparação.</strong><br>Ainda não publicamos promoções nem tarifas verificadas. Estas rotas são sugestões de destinos, sem garantia de preço ou disponibilidade. Os valores atualizados são apresentados nas plataformas externas.</div></section>
+<div class="band"><section class="wrap section split"><div><h2>Da ideia à próxima partida.</h2><ol class="steps"><li><strong>Escolhe a tua viagem</strong><p>Indica aeroportos, datas e número de adultos.</p></li><li><strong>Compara no exterior</strong><p>Consulta preços, horários e condições no comparador.</p></li><li><strong>Confirma antes de reservar</strong><p>Revê o preço total, bagagem, escalas e regras de alteração com o vendedor.</p></li></ol></div><aside class="future" id="alertas"><span class="pill">Funcionalidade futura</span><h3>Alertas de preços</h3><p>Queremos ajudar-te a acompanhar as tuas rotas favoritas. Os alertas automáticos da VOA &amp; POUPA ainda não estão disponíveis e não têm data de lançamento definida.</p><p class="small">Não estamos a recolher inscrições nem a enviar notificações. Por agora, consulta as opções de alertas diretamente nos comparadores.</p></aside></section></div>
+<section class="wrap section" id="transparencia"><h2>Viajar com informação clara.</h2><details open><summary>Onde vejo os preços e faço a reserva?</summary><p>A VOA &amp; POUPA é um projeto informativo. Não apresenta preços em tempo real, não vende bilhetes e não recebe pagamentos. A pesquisa continua no KAYAK; a reserva é feita com o fornecedor que escolheres. Confirma sempre disponibilidade, preço final e condições antes de pagar.</p></details><details><summary>Existem ligações de afiliados?</summary><p>Esta versão não inclui códigos de afiliado nos links. Poderemos aderir a programas de afiliados no futuro e receber uma comissão por reservas elegíveis. Quando isso acontecer, identificaremos as ligações comerciais e explicaremos a relação com o parceiro.</p></details><details><summary>O que acontece aos dados da pesquisa?</summary><p>Este ficheiro não guarda os teus critérios nem inclui ferramentas de análise ou formulários de inscrição. Ao continuar, os aeroportos, datas e número de adultos são enviados ao comparador através do endereço da pesquisa, que pode ficar no histórico do navegador. Nos sites externos aplicam-se as respetivas políticas de privacidade e cookies.</p></details></section>
+<section class="wrap contact" id="contacto"><div><h2>Fala connosco.</h2><p>Tens uma questão, sugestão ou proposta de parceria?</p></div><a href="mailto:voaepoupa@gmail.com">voaepoupa@gmail.com</a></section>
+</main><footer><div class="wrap"><div><a class="logo" href="#inicio">✈ VOA <span>&amp; POUPA</span></a><p>Viaja mais. Gasta menos.</p></div><div><p>© <span id="year">2026</span> VOA &amp; POUPA · Versão 2.0 · atualização 1</p><p>Projeto informativo em desenvolvimento.</p><a href="#transparencia">Transparência e privacidade</a></div></div></footer>
+<script>
+'use strict';
+const byId = id => document.getElementById(id);
+const form = byId('flight-form');
+const departure = byId('departure');
+const returnDate = byId('return');
+const trip = byId('trip');
+function localDate(date) { return `${date.getFullYear()}-${String(date.getMonth()+1).padStart(2,'0')}-${String(date.getDate()).padStart(2,'0')}`; }
+function updateDates() {
+  departure.min = localDate(new Date());
+  returnDate.min = departure.value && departure.value > departure.min ? departure.value : departure.min;
+  returnDate.disabled = trip.value === 'oneway';
+  returnDate.required = !returnDate.disabled;
+  departure.setCustomValidity(departure.value && departure.value < departure.min ? 'Escolhe uma data de ida a partir de hoje.' : '');
+  returnDate.setCustomValidity(!returnDate.disabled && returnDate.value && returnDate.value < returnDate.min ? 'O regresso deve ser no dia da ida ou depois.' : '');
+  updateSummary();
+}
+function updateSummary() {
+  const origin = byId('origin');
+  const destination = byId('destination');
+  const formatDate = value => value ? value.split('-').reverse().join('/') : 'por escolher';
+  const adults = byId('adults').value;
+  byId('search-summary').textContent = origin.options[origin.selectedIndex].text + ' → ' + destination.options[destination.selectedIndex].text + ' · Ida: ' + formatDate(departure.value) + (trip.value === 'oneway' ? ' · Só ida' : ' · Regresso: ' + formatDate(returnDate.value)) + ' · ' + adults + (adults === '1' ? ' adulto' : ' adultos');
+}
+byId('swap-airports').addEventListener('click', () => {
+  const origin = byId('origin');
+  const destination = byId('destination');
+  [origin.value, destination.value] = [destination.value, origin.value];
+  showError(''); updateSummary(); origin.focus();
+});
+window.addEventListener('pageshow', updateDates);
+function buildSearchUrl(origin, destination, outbound, inbound, adults, oneWay) {
+  const route = `${origin}-${destination}/${outbound}`;
+  return `https://www.kayak.pt/flights/${route}${oneWay ? '' : '/' + inbound}/${adults}adults`;
+}
+function showError(message) {
+  const error = byId('form-error'); error.textContent = message; error.hidden = !message;
+}
+form.addEventListener('submit', event => {
+  event.preventDefault(); updateDates(); showError('');
+  if (!form.reportValidity()) return;
+  const origin = byId('origin').value;
+  const destination = byId('destination').value;
+  if (origin === destination) { showError('Escolhe aeroportos diferentes para a origem e o destino.'); byId('destination').focus(); return; }
+  if (departure.value < departure.min || (!returnDate.disabled && returnDate.value < departure.value)) { showError('Confirma as datas: a ida não pode estar no passado e o regresso deve ser no dia da ida ou depois.'); return; }
+  window.location.assign(buildSearchUrl(origin, destination, departure.value, returnDate.value, byId('adults').value, trip.value === 'oneway'));
+});
+trip.addEventListener('change', updateDates);
+departure.addEventListener('change', updateDates);
+form.addEventListener('input', () => { showError(''); updateDates(); });
+form.addEventListener('change', updateDates);
+document.querySelectorAll('[data-route]').forEach(button => button.addEventListener('click', () => {
+  byId('origin').value = 'LIS'; byId('destination').value = button.dataset.route; showError(''); updateDates();
+  byId('pesquisar').scrollIntoView({behavior:window.matchMedia('(prefers-reduced-motion: reduce)').matches ? 'instant' : 'smooth'});
+  departure.focus({preventScroll:true});
+}));
+byId('year').textContent = new Date().getFullYear();
+updateDates();
+</script>
+</body></html>
