@@ -10,6 +10,7 @@
 @media(max-width:600px){.bar{gap:14px;padding:18px 0}nav{gap:18px}.hero-layout{grid-template-columns:1fr;padding:38px 0 85px}.hero h1{letter-spacing:-2px}.route-art{display:none}.search-panel{padding:22px 18px}.panel-head{align-items:start;flex-direction:column;gap:8px}.fields,.search-bottom,.grid,.split{grid-template-columns:1fr}.search-bottom button{grid-column:auto}.section{padding:48px 0}.contact{align-items:start;flex-direction:column}.button{width:100%}.destination-art{height:100px}nav a{font-size:13px}}
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
 .search-tools{display:flex;gap:12px;align-items:center;flex-wrap:wrap;margin-bottom:18px}.search-tools button{font-size:13px;padding:8px 14px;border:1px solid var(--line)}.search-summary{padding:12px 16px;background:var(--light);border-radius:8px;color:var(--navy);font-size:14px}.search-panel input:invalid:not(:placeholder-shown){box-shadow:none}@media print{nav,.search-tools,.search-bottom button{display:none}.hero-layout{padding:20px 0 60px}.section{padding:24px 0}.grid{break-inside:avoid}}
+.field-label{display:block;font-size:13px;font-weight:700}.passenger-field{position:relative;min-width:0}.passenger-picker{border:0;padding:0;margin-top:6px}.passenger-picker>summary{list-style:none;min-height:48px;border:1px solid #acbfd0;border-radius:8px;padding:11px 10px;font-weight:400;display:flex;justify-content:space-between;gap:12px}.passenger-picker>summary::-webkit-details-marker{display:none}.passenger-picker[open]>summary{border-color:var(--blue);box-shadow:0 0 0 2px #007bff18}.passenger-panel{position:absolute;z-index:4;top:100%;right:0;margin-top:8px;width:390px;max-width:calc(100vw - 60px);border:1px solid var(--line);border-radius:14px;padding:22px;background:white;box-shadow:0 16px 40px #00336622}.passenger-panel h3{margin:0 0 18px;font-size:19px}.passenger-row{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:14px 0;border-bottom:1px solid var(--line)}.passenger-row strong{display:block;font-size:14px}.passenger-row small{display:block;font-size:12px;color:var(--muted)}.counter{display:flex;align-items:center;gap:12px}.counter button{width:36px;height:36px;border:1px solid #acbfd0;border-radius:50%;background:white;color:var(--navy);font-size:22px;cursor:pointer}.counter button:disabled{opacity:.35;cursor:default}.counter output{min-width:18px;text-align:center;font-weight:700}.age-row{display:grid;grid-template-columns:1fr 1fr;gap:10px;padding-top:14px}.age-row label:only-child{grid-column:1/-1}.passenger-panel .button{width:100%;margin-top:8px;padding:10px}.passenger-panel .small{font-size:12px;line-height:1.5}.search-bottom>button{min-height:48px}@media(max-width:600px){.passenger-panel{position:static;width:100%;max-width:none;box-shadow:none;margin-top:10px;padding:16px}.passenger-row{gap:8px}.age-row{grid-template-columns:1fr}}
 </style>
 </head>
 <body>
@@ -18,15 +19,15 @@
 <main id="conteudo">
 <div class="hero" id="inicio"><div class="wrap hero-layout"><div><div class="eyebrow">O próximo destino começa aqui</div><h1>Viaja mais.<br><span>Gasta menos.</span></h1><p>De Lisboa a Luanda, ou rumo a uma nova aventura. Escolhe a viagem e compara as opções lá fora.</p></div><div class="route-art" aria-hidden="true"><div class="route"><div class="airport">LIS<small>Lisboa</small></div><div class="flight-line">✈</div><div class="airport">NBJ<small>Luanda</small></div></div><p>Portugal ↔ Angola · Inspiração para a tua próxima viagem</p></div></div></div>
 <div class="wrap"><section class="search-panel" id="pesquisar" aria-labelledby="search-title"><div class="panel-head"><h2 id="search-title">Para onde vamos?</h2><span class="pill">Pesquisa externa · KAYAK</span></div>
-<div class="search-tools"><button class="button secondary" id="swap-airports" type="button" aria-label="Trocar aeroportos de origem e destino">⇄ Trocar aeroportos</button><span class="small">Planeia a tua viagem, sem preços inventados.</span></div>
-<form id="flight-form" action="https://www.kayak.pt/flights" method="get" aria-describedby="search-summary">
+<div class="search-tools"><button class="button secondary" id="swap-airports" type="button" aria-label="Trocar aeroportos de origem e destino">⇄ Trocar aeroportos</button><span class="small">Compara opções para a tua próxima viagem.</span></div>
+<form id="flight-form" novalidate action="https://www.kayak.pt/flights" method="get" aria-describedby="search-summary">
 <div class="fields"><label>Origem<select id="origin" required><option value="LIS">Lisboa (LIS)</option><option value="OPO">Porto (OPO)</option><option value="NBJ">Luanda — Dr. António Agostinho Neto (NBJ)</option><option value="CDG">Paris — Charles de Gaulle (CDG)</option><option value="GIG">Rio — Galeão (GIG)</option><option value="GRU">São Paulo — Guarulhos (GRU)</option><option value="MAD">Madrid (MAD)</option><option value="LHR">Londres — Heathrow (LHR)</option></select></label>
 <label>Destino<select id="destination" required><option value="NBJ">Luanda — Dr. António Agostinho Neto (NBJ)</option><option value="LIS">Lisboa (LIS)</option><option value="OPO">Porto (OPO)</option><option value="CDG">Paris — Charles de Gaulle (CDG)</option><option value="GIG">Rio — Galeão (GIG)</option><option value="GRU">São Paulo — Guarulhos (GRU)</option><option value="MAD">Madrid (MAD)</option><option value="LHR">Londres — Heathrow (LHR)</option></select></label>
 <label>Data de ida<input type="date" id="departure" required></label><label>Data de regresso<input type="date" id="return" required></label></div>
-<div class="search-bottom"><label>Tipo de viagem<select id="trip"><option value="return">Ida e volta</option><option value="oneway">Só ida</option></select></label><label>Passageiros (adultos)<select id="adults"><option value="1">1 adulto</option><option value="2">2 adultos</option><option value="3">3 adultos</option><option value="4">4 adultos</option><option value="5">5 adultos</option><option value="6">6 adultos</option><option value="7">7 adultos</option><option value="8">8 adultos</option><option value="9">9 adultos</option></select></label><button class="button" type="submit">Comparar no KAYAK ↗</button></div>
+<div class="search-bottom"><label>Tipo de viagem<select id="trip"><option value="return">Ida e volta</option><option value="oneway">Só ida</option></select></label><div class="passenger-field"><span class="field-label">Passageiros</span><details id="passenger-picker" class="passenger-picker"><summary><span id="passenger-label">1 adulto</span><span aria-hidden="true">⌄</span></summary><div class="passenger-panel"><h3>Quem vai viajar?</h3><div id="passenger-rows"></div><div id="passenger-ages"></div><p class="small">Indica as idades na data da viagem. Confirma as regras da companhia se houver um aniversário durante a viagem.</p><p class="small">Até 9 passageiros nesta pesquisa. Para grupos maiores, <a href="https://www.kayak.pt/flights" target="_blank" rel="noopener noreferrer">consulta o KAYAK ↗</a>.</p><button class="button secondary" type="button" id="passenger-done">Concluir</button></div></details></div><button class="button" type="submit">Comparar no KAYAK ↗</button></div>
 <p id="search-summary" class="search-summary" role="status" aria-live="polite" aria-atomic="true"></p>
 <p id="form-error" class="error" role="alert" hidden></p>
-<p class="small">Vais sair deste site. Confirma os aeroportos, datas e passageiros no KAYAK. Adiciona crianças e bebés no comparador; este formulário envia apenas adultos. Para outros aeroportos, pesquisa diretamente no comparador.</p>
+<p class="small">Vais sair deste site. Confirma os aeroportos, datas e passageiros no KAYAK. As idades das crianças e bebés são enviadas para a pesquisa. As condições e tarifas dependem da companhia. Para outros aeroportos, pesquisa diretamente no comparador.</p>
 </form><noscript><p>Ativa o JavaScript para enviar os critérios de pesquisa, ou abre um dos comparadores abaixo e preenche a viagem.</p></noscript>
 <p class="small">Também podes pesquisar diretamente: <a href="https://www.google.com/travel/flights" rel="noopener noreferrer" target="_blank">Google Flights ↗</a> · <a href="https://www.skyscanner.pt/" rel="noopener noreferrer" target="_blank">Skyscanner ↗</a></p></section></div>
 <section class="wrap section" id="destinos"><div class="eyebrow" style="color:#005bbd">Destinos em destaque</div><h2>Uma viagem para cada vontade.</h2><p class="section-intro">Inspiração para a próxima partida. Escolhe uma rota para preencher o formulário e indica as tuas datas.</p><div class="grid">
@@ -34,10 +35,10 @@
 <article class="card"><div class="destination-art paris"><span>Paris</span><small>FRANÇA</small></div><div class="card-body"><span class="small">Lisboa → Paris · LIS–CDG</span><h3>Uma pausa com outra vista.</h3><p>Prepara uma escapadinha entre passeios, arte e novos sabores.</p><button class="button secondary" type="button" data-route="CDG">Pesquisar esta rota →</button></div></article>
 <article class="card"><div class="destination-art rio"><span>Rio de Janeiro</span><small>BRASIL</small></div><div class="card-body"><span class="small">Lisboa → Rio · LIS–GIG</span><h3>Abre espaço para o sol.</h3><p>Explora opções para descobrir a cidade e a costa brasileira.</p><button class="button secondary" type="button" data-route="GIG">Pesquisar esta rota →</button></div></article></div>
 <div class="offer-note"><strong>Ofertas verificadas: em preparação.</strong><br>Ainda não publicamos promoções nem tarifas verificadas. Estas rotas são sugestões de destinos, sem garantia de preço ou disponibilidade. Os valores atualizados são apresentados nas plataformas externas.</div></section>
-<div class="band"><section class="wrap section split"><div><h2>Da ideia à próxima partida.</h2><ol class="steps"><li><strong>Escolhe a tua viagem</strong><p>Indica aeroportos, datas e número de adultos.</p></li><li><strong>Compara no exterior</strong><p>Consulta preços, horários e condições no comparador.</p></li><li><strong>Confirma antes de reservar</strong><p>Revê o preço total, bagagem, escalas e regras de alteração com o vendedor.</p></li></ol></div><aside class="future" id="alertas"><span class="pill">Funcionalidade futura</span><h3>Alertas de preços</h3><p>Queremos ajudar-te a acompanhar as tuas rotas favoritas. Os alertas automáticos da VOA &amp; POUPA ainda não estão disponíveis e não têm data de lançamento definida.</p><p class="small">Não estamos a recolher inscrições nem a enviar notificações. Por agora, consulta as opções de alertas diretamente nos comparadores.</p></aside></section></div>
-<section class="wrap section" id="transparencia"><h2>Viajar com informação clara.</h2><details open><summary>Onde vejo os preços e faço a reserva?</summary><p>A VOA &amp; POUPA é um projeto informativo. Não apresenta preços em tempo real, não vende bilhetes e não recebe pagamentos. A pesquisa continua no KAYAK; a reserva é feita com o fornecedor que escolheres. Confirma sempre disponibilidade, preço final e condições antes de pagar.</p></details><details><summary>Existem ligações de afiliados?</summary><p>Esta versão não inclui códigos de afiliado nos links. Poderemos aderir a programas de afiliados no futuro e receber uma comissão por reservas elegíveis. Quando isso acontecer, identificaremos as ligações comerciais e explicaremos a relação com o parceiro.</p></details><details><summary>O que acontece aos dados da pesquisa?</summary><p>Este ficheiro não guarda os teus critérios nem inclui ferramentas de análise ou formulários de inscrição. Ao continuar, os aeroportos, datas e número de adultos são enviados ao comparador através do endereço da pesquisa, que pode ficar no histórico do navegador. Nos sites externos aplicam-se as respetivas políticas de privacidade e cookies.</p></details></section>
+<div class="band"><section class="wrap section split"><div><h2>Da ideia à próxima partida.</h2><ol class="steps"><li><strong>Escolhe a tua viagem</strong><p>Indica aeroportos, datas e quem vai viajar.</p></li><li><strong>Compara no exterior</strong><p>Consulta preços, horários e condições no comparador.</p></li><li><strong>Confirma antes de reservar</strong><p>Revê o preço total, bagagem, escalas e regras de alteração com o vendedor.</p></li></ol></div><aside class="future" id="alertas"><span class="pill">Funcionalidade futura</span><h3>Alertas de preços</h3><p>Queremos ajudar-te a acompanhar as tuas rotas favoritas. Os alertas automáticos da VOA &amp; POUPA ainda não estão disponíveis e não têm data de lançamento definida.</p><p class="small">Não estamos a recolher inscrições nem a enviar notificações. Por agora, consulta as opções de alertas diretamente nos comparadores.</p></aside></section></div>
+<section class="wrap section" id="transparencia"><h2>Viajar com informação clara.</h2><details open><summary>Onde vejo os preços e faço a reserva?</summary><p>A VOA &amp; POUPA é um projeto informativo. Não apresenta preços em tempo real, não vende bilhetes e não recebe pagamentos. A pesquisa continua no KAYAK; a reserva é feita com o fornecedor que escolheres. Confirma sempre disponibilidade, preço final e condições antes de pagar.</p></details><details><summary>Existem ligações de afiliados?</summary><p>Esta versão não inclui códigos de afiliado nos links. Poderemos aderir a programas de afiliados no futuro e receber uma comissão por reservas elegíveis. Quando isso acontecer, identificaremos as ligações comerciais e explicaremos a relação com o parceiro.</p></details><details><summary>O que acontece aos dados da pesquisa?</summary><p>Este ficheiro não guarda os teus critérios nem inclui ferramentas de análise ou formulários de inscrição. Ao continuar, os aeroportos, datas, passageiros e idades dos menores são enviados ao comparador através do endereço da pesquisa, que pode ficar no histórico do navegador. Nos sites externos aplicam-se as respetivas políticas de privacidade e cookies.</p></details></section>
 <section class="wrap contact" id="contacto"><div><h2>Fala connosco.</h2><p>Tens uma questão, sugestão ou proposta de parceria?</p></div><a href="mailto:voaepoupa@gmail.com">voaepoupa@gmail.com</a></section>
-</main><footer><div class="wrap"><div><a class="logo" href="#inicio">✈ VOA <span>&amp; POUPA</span></a><p>Viaja mais. Gasta menos.</p></div><div><p>© <span id="year">2026</span> VOA &amp; POUPA · Versão 2.0 · atualização 1</p><p>Projeto informativo em desenvolvimento.</p><a href="#transparencia">Transparência e privacidade</a></div></div></footer>
+</main><footer><div class="wrap"><div><a class="logo" href="#inicio">✈ VOA <span>&amp; POUPA</span></a><p>Viaja mais. Gasta menos.</p></div><div><p>© <span id="year">2026</span> VOA &amp; POUPA · Versão 2.0 · atualização 2</p><p>Projeto informativo em desenvolvimento.</p><a href="#transparencia">Transparência e privacidade</a></div></div></footer>
 <script>
 'use strict';
 const byId = id => document.getElementById(id);
@@ -45,6 +46,74 @@ const form = byId('flight-form');
 const departure = byId('departure');
 const returnDate = byId('return');
 const trip = byId('trip');
+const passengers = { adults: 1, children: [], infants: [] };
+function passengerSummary() {
+  const parts = [passengers.adults + (passengers.adults === 1 ? ' adulto' : ' adultos')];
+  if (passengers.children.length) parts.push(passengers.children.length + (passengers.children.length === 1 ? ' criança' : ' crianças'));
+  if (passengers.infants.length) parts.push(passengers.infants.length + (passengers.infants.length === 1 ? ' bebé' : ' bebés'));
+  return parts.join(' · ');
+}
+function passengerTotal() { return passengers.adults + passengers.children.length + passengers.infants.length; }
+function lapCount() { return passengers.infants.filter(infant => infant.seat === 'lap').length; }
+function canChangePassenger(kind, delta) {
+  if (delta === 1) return passengerTotal() < 9 && (kind === 'adults' || passengers.children.length + passengers.infants.length < 7);
+  return kind === 'adults' ? passengers.adults > Math.max(1, lapCount()) : passengers[kind].length > 0;
+}
+function changePassenger(kind, delta) {
+  if (!canChangePassenger(kind, delta)) return;
+  if (kind === 'adults') passengers.adults += delta;
+  else if (delta === -1) passengers[kind].pop();
+  else passengers[kind].push(kind === 'children' ? '' : { age: '', seat: lapCount() < passengers.adults ? 'lap' : 'seat' });
+  renderPassengers(); showError(''); updateSummary();
+}
+function renderPassengers() {
+  const groups = [['adults','Adultos','18 anos ou mais'],['children','Crianças','Dos 2 aos 17 anos'],['infants','Bebés','Menos de 2 anos']];
+  byId('passenger-rows').innerHTML = groups.map(([kind,label,hint]) => `<div class="passenger-row"><div><strong>${label}</strong><small>${hint}</small></div><div class="counter"><button type="button" data-kind="${kind}" data-delta="-1" aria-label="Diminuir ${label.toLowerCase()}" ${canChangePassenger(kind,-1) ? '' : 'disabled'}>−</button><output aria-label="Número de ${label.toLowerCase()}">${kind === 'adults' ? passengers.adults : passengers[kind].length}</output><button type="button" data-kind="${kind}" data-delta="1" aria-label="Adicionar ${label.toLowerCase()}" ${canChangePassenger(kind,1) ? '' : 'disabled'}>+</button></div></div>`).join('');
+  const ageOptions = (min,max,value) => '<option value="">Seleciona</option>' + Array.from({length:max-min+1},(_,index)=>min+index).map(age=>`<option value="${age}" ${String(age) === String(value) ? 'selected' : ''}>${age === 0 ? 'Menos de 1 ano' : age + (age === 1 ? ' ano' : ' anos')}</option>`).join('');
+  byId('passenger-ages').innerHTML = passengers.children.map((age,index)=>`<div class="age-row"><label>Idade da criança ${index+1}<select required data-child="${index}">${ageOptions(2,17,age)}</select></label></div>`).join('') + passengers.infants.map((infant,index)=>`<div class="age-row"><label>Idade do bebé ${index+1}<select required data-infant-age="${index}">${ageOptions(0,1,infant.age)}</select></label><label>Lugar do bebé ${index+1}<select data-infant-seat="${index}"><option value="lap" ${infant.seat === 'lap' ? 'selected' : ''}>Ao colo</option><option value="seat" ${infant.seat === 'seat' ? 'selected' : ''}>Lugar próprio</option></select></label></div>`).join('');
+}
+function passengerTokens() {
+  return [...passengers.infants.filter(infant=>infant.seat === 'lap').map(()=>'1L'),...passengers.infants.filter(infant=>infant.seat === 'seat').map(infant=>String(infant.age)),...passengers.children.map(String)];
+}
+function validatePassengers() {
+  const missing = byId('passenger-ages').querySelector('select:invalid');
+  if (missing) {
+    byId('passenger-picker').open = true;
+    showError('Indica a idade de cada criança e bebé para continuar.');
+    missing.focus(); missing.reportValidity(); return false;
+  }
+  if (lapCount() > passengers.adults) {
+    byId('passenger-picker').open = true;
+    showError('Cada bebé ao colo precisa de um adulto. Adiciona um adulto ou escolhe lugar próprio para o bebé.');
+    byId('passenger-ages').querySelector('[data-infant-seat]').focus(); return false;
+  }
+  return true;
+}
+byId('passenger-rows').addEventListener('click', event => {
+  const button = event.target.closest('button[data-kind]');
+  if (!button || button.disabled) return;
+  const kind = button.dataset.kind, delta = Number(button.dataset.delta);
+  changePassenger(kind,delta);
+  const replacement = byId('passenger-rows').querySelector(`[data-kind="${kind}"][data-delta="${delta}"]`);
+  (replacement.disabled ? byId('passenger-rows').querySelector(`[data-kind="${kind}"][data-delta="${-delta}"]`) : replacement).focus();
+});
+byId('passenger-ages').addEventListener('change', event => {
+  const field = event.target;
+  if (field.dataset.child !== undefined) passengers.children[Number(field.dataset.child)] = field.value;
+  if (field.dataset.infantAge !== undefined) passengers.infants[Number(field.dataset.infantAge)].age = field.value;
+  if (field.dataset.infantSeat !== undefined) passengers.infants[Number(field.dataset.infantSeat)].seat = field.value;
+  // Update controls without rebuilding the age inputs or moving keyboard focus.
+  byId('passenger-rows').querySelectorAll('button[data-kind]').forEach(button=>button.disabled = !canChangePassenger(button.dataset.kind,Number(button.dataset.delta)));
+  showError(''); updateSummary();
+});
+byId('passenger-done').addEventListener('click', () => {
+  if (!validatePassengers()) return;
+  showError(''); byId('passenger-picker').open = false; byId('passenger-picker').querySelector('summary').focus();
+});
+byId('passenger-picker').addEventListener('keydown', event => {
+  if (event.key === 'Escape') { byId('passenger-picker').open = false; byId('passenger-picker').querySelector('summary').focus(); }
+});
+
 function localDate(date) { return `${date.getFullYear()}-${String(date.getMonth()+1).padStart(2,'0')}-${String(date.getDate()).padStart(2,'0')}`; }
 function updateDates() {
   departure.min = localDate(new Date());
@@ -59,8 +128,9 @@ function updateSummary() {
   const origin = byId('origin');
   const destination = byId('destination');
   const formatDate = value => value ? value.split('-').reverse().join('/') : 'por escolher';
-  const adults = byId('adults').value;
-  byId('search-summary').textContent = origin.options[origin.selectedIndex].text + ' → ' + destination.options[destination.selectedIndex].text + ' · Ida: ' + formatDate(departure.value) + (trip.value === 'oneway' ? ' · Só ida' : ' · Regresso: ' + formatDate(returnDate.value)) + ' · ' + adults + (adults === '1' ? ' adulto' : ' adultos');
+
+  byId('search-summary').textContent = origin.options[origin.selectedIndex].text + ' → ' + destination.options[destination.selectedIndex].text + ' · Ida: ' + formatDate(departure.value) + (trip.value === 'oneway' ? ' · Só ida' : ' · Regresso: ' + formatDate(returnDate.value)) + ' · ' + passengerSummary();
+  byId('passenger-label').textContent = passengerSummary();
 }
 byId('swap-airports').addEventListener('click', () => {
   const origin = byId('origin');
@@ -69,21 +139,22 @@ byId('swap-airports').addEventListener('click', () => {
   showError(''); updateSummary(); origin.focus();
 });
 window.addEventListener('pageshow', updateDates);
-function buildSearchUrl(origin, destination, outbound, inbound, adults, oneWay) {
+function buildSearchUrl(origin, destination, outbound, inbound, adults, oneWay, childTokens = []) {
   const route = `${origin}-${destination}/${outbound}`;
-  return `https://www.kayak.pt/flights/${route}${oneWay ? '' : '/' + inbound}/${adults}adults`;
+  return `https://www.kayak.pt/flights/${route}${oneWay ? '' : '/' + inbound}/${adults}adults${childTokens.length ? '/children-' + childTokens.join('-') : ''}`;
 }
 function showError(message) {
   const error = byId('form-error'); error.textContent = message; error.hidden = !message;
 }
 form.addEventListener('submit', event => {
   event.preventDefault(); updateDates(); showError('');
+  if (!validatePassengers()) return;
   if (!form.reportValidity()) return;
   const origin = byId('origin').value;
   const destination = byId('destination').value;
   if (origin === destination) { showError('Escolhe aeroportos diferentes para a origem e o destino.'); byId('destination').focus(); return; }
   if (departure.value < departure.min || (!returnDate.disabled && returnDate.value < departure.value)) { showError('Confirma as datas: a ida não pode estar no passado e o regresso deve ser no dia da ida ou depois.'); return; }
-  window.location.assign(buildSearchUrl(origin, destination, departure.value, returnDate.value, byId('adults').value, trip.value === 'oneway'));
+  window.location.assign(buildSearchUrl(origin, destination, departure.value, returnDate.value, passengers.adults, trip.value === 'oneway', passengerTokens()));
 });
 trip.addEventListener('change', updateDates);
 departure.addEventListener('change', updateDates);
@@ -94,6 +165,7 @@ document.querySelectorAll('[data-route]').forEach(button => button.addEventListe
   byId('pesquisar').scrollIntoView({behavior:window.matchMedia('(prefers-reduced-motion: reduce)').matches ? 'instant' : 'smooth'});
   departure.focus({preventScroll:true});
 }));
+renderPassengers();
 byId('year').textContent = new Date().getFullYear();
 updateDates();
 </script>
